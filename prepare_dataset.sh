@@ -1,0 +1,1 @@
+python tools/create_data.py nuscenes --root-path /dataset/nuscenes --out-dir /dataset/nuscenes --extra-tag nuscenes

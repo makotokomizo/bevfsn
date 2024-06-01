@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+viz/
+venv*
+
+*.pth
+mmdet3d.egg-info/

@@ -1,4 +1,5 @@
-FROM nvidia/cuda:11.3.1-devel-ubuntu20.04
+FROM nvidia/cuda:11.3.1-cudnn8-devel-ubuntu20.04
+# FROM nvidia/cuda:11.1.1-cudnn8-devel-ubuntu20.04
 
 RUN apt-get update && apt-get install wget -yq
 RUN apt-get install build-essential g++ gcc -y
@@ -17,7 +18,14 @@ RUN conda install pytorch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1 cudatoo
 RUN pip install Pillow==8.4.0
 RUN pip install tqdm
 RUN pip install torchpack
+
+RUN pip install mmcv-full==1.4.0 -f https://download.openmmlab.com/mmcv/dist/cu111/torch1.9.0/index.html
+
 RUN pip install mmcv==1.4.0 mmcv-full==1.4.0 mmdet==2.20.0
 RUN pip install nuscenes-devkit
 RUN pip install mpi4py==3.0.3
 RUN pip install numba==0.48.0
+
+RUN pip install numpy==1.20
+
+WORKDIR /the/workdir/path
